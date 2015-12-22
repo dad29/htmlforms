@@ -50,6 +50,23 @@
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
+
+	document.contactform.onsubmit=function()
+	{
+		if(document.contactform.fullname.value == '')
+		{
+			alert("Please enter your name");
+			document.contactform.fullname.focus();
+			return false;
+		}
+		else if(document.contactform.email.value == '')
+		{
+			alert("Please enter you Email Address");
+			document.contactform.email.focus();
+			return false;
+		}
+		return true;
+	}
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
